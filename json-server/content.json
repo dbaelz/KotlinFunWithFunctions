@@ -1,0 +1,28 @@
+{
+  "info": {
+    "organizer": "Kotlin Karlsruhe User Group",
+    "title": "Kotlin Meetup Vol. 4",
+    "date": "2018-02-22T19:30:00+01:00",
+    "link": "https://www.meetup.com/de-DE/Kotlin-Karlsruhe-User-Group/events/247320883/"
+  },
+  "topics": [
+    {
+      "id": 1,
+      "title": "Building a Browser Extension with Kotlin",
+      "author": "Kirill Rakhman"
+    },
+    {
+      "id": 2,
+      "title": "A very personal dive into my favorite Kotlin features",
+      "author": "Daniel Bälz"
+    }
+  ],
+  "location": [
+    {
+      "name": "Chrono24 GmbH",
+      "address": "Haid-und-Neu-Straße 18",
+      "zip": "76131",
+      "city": "Karlsruhe"
+    }
+  ]
+}
