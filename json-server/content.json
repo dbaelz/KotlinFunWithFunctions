@@ -17,12 +17,10 @@
       "author": "Daniel Bälz"
     }
   ],
-  "location": [
-    {
-      "name": "Chrono24 GmbH",
-      "address": "Haid-und-Neu-Straße 18",
-      "zip": "76131",
-      "city": "Karlsruhe"
-    }
-  ]
+  "location": {
+    "name": "Chrono24 GmbH",
+    "address": "Haid-und-Neu-Straße 18",
+    "zip": "76131",
+    "city": "Karlsruhe"
+  }
 }
