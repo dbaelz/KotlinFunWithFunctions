@@ -4,7 +4,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.text.TextUtils
 import android.view.View
 import android.widget.TextView
 import de.dbaelz.kug.kotlindemo.data.EventService
@@ -27,6 +26,7 @@ class TopicActivity : AppCompatActivity() {
 
         if (info?.title != null) {
             titleTextView.text = info.title
+            titleTextView.textAlignment = View.TEXT_ALIGNMENT_CENTER
             if (info.link != null) {
                 titleTextView.setTextColor(resources.getColor(R.color.colorPrimaryDark))
                 titleTextView.setOnClickListener({
@@ -44,11 +44,9 @@ class TopicActivity : AppCompatActivity() {
         if (topics.size >= 2) {
             val slot1Topic = topics[0]
             slot1TextView.text = getString(R.string.event_slot_text, slot1Topic.author, slot1Topic.title)
-            slot1TextView.ellipsize = TextUtils.TruncateAt.END
 
             val slot2Topic = topics[1]
             slot2TextView.text = getString(R.string.event_slot_text, slot2Topic.author, slot2Topic.title)
-            slot2TextView.ellipsize = TextUtils.TruncateAt.END
         }
     }
 }
