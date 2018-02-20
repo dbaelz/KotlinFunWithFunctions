@@ -4,6 +4,7 @@ import de.dbaelz.kug.kotlindemo.data.event.Event
 import de.dbaelz.kug.kotlindemo.data.event.Info
 import de.dbaelz.kug.kotlindemo.data.event.Location
 import de.dbaelz.kug.kotlindemo.data.event.Topic
+import org.joda.time.DateTime
 
 
 object EventService {
@@ -11,7 +12,7 @@ object EventService {
             info = Info(
                     organizer = "Kotlin Karlsruhe User Group",
                     title = "Kotlin Meetup Vol. 4",
-                    date = "2018-02-22T19:30:00+01:00",
+                    date = DateTime("2018-02-22T19:30:00+01:00"),
                     link = "https://www.meetup.com/de-DE/Kotlin-Karlsruhe-User-Group/events/247320883/"),
             topics = listOf(
                     Topic(id = 1, title = "Building a Browser Extension with Kotlin", author = "Kirill Rakhman"),

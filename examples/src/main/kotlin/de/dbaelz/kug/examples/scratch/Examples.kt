@@ -1,4 +1,4 @@
-package de.dbaelz.kug.examples
+package de.dbaelz.kug.examples.scratch
 
 fun paddingStart(input: String, length: Int, paddingChar: Char = ' '): String {
     if (length < 0 || input.length <= length)

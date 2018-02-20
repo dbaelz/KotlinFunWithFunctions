@@ -5,5 +5,4 @@ data class Location(
         val address: String? = null,
         val zip: String? = null,
         val city: String? = null
-
 )
