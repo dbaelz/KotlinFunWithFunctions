@@ -48,5 +48,12 @@ class EventActivity : AppCompatActivity() {
             val slot2Topic = topics[1]
             slot2TextView.text = getString(R.string.event_slot_text, slot2Topic.author, slot2Topic.title)
         }
+
+
+        if (BuildConfig.DEBUG) {
+            val debugVersionTextView = findViewById<TextView>(R.id.event_debug_version)
+            debugVersionTextView.text = getString(R.string.event_debug_version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE)
+            debugVersionTextView.visibility = View.VISIBLE
+        }
     }
 }
