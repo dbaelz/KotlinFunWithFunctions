@@ -9,11 +9,11 @@ import android.widget.TextView
 import de.dbaelz.kug.kotlindemo.data.EventService
 
 
-class TopicActivity : AppCompatActivity() {
+class EventActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_topic)
+        setContentView(R.layout.activity_event)
 
         val titleTextView = findViewById<TextView>(R.id.event_title)
         val locationTextView = findViewById<TextView>(R.id.event_location)
