@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import de.dbaelz.kug.kotlindemo.data.EventService
@@ -51,6 +52,7 @@ class EventActivity : AppCompatActivity() {
 
 
         if (BuildConfig.DEBUG) {
+            Log.d("DEBUG", "Debug mode active")
             val debugVersionTextView = findViewById<TextView>(R.id.event_debug_version)
             debugVersionTextView.text = getString(R.string.event_debug_version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE)
             debugVersionTextView.visibility = View.VISIBLE
