@@ -1,5 +1,16 @@
 package de.dbaelz.kug.examples.scratch
 
+// SimpleEventDsl.kt
+/*
+fun event(block: Event.() -> Unit): Event {
+    return Event().apply(block)
+}
+
+fun Event.info(block: Info.() -> Unit) {
+    info = Info().apply(block)
+}*/
+
+
 
 // EventDsl.kt
 /*
