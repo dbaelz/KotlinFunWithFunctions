@@ -22,21 +22,35 @@ class EventActivity : AppCompatActivity() {
         val slot2TextView = findViewById<TextView>(R.id.event_slot2)
 
 
+        // Some examples for higher order and extension functions
+        // For more examples see the files in the examples module
+
+
         val (info, topics, location) = EventService.getFirstEvent()
+                .also {
+                    // also(): An extension function typically used for side-effects in chains
+                    Log.d("TAG", it.toString())
+                }
 
 
         if (info?.title != null) {
-            titleTextView.text = info.title
-            titleTextView.textAlignment = View.TEXT_ALIGNMENT_CENTER
-            if (info.link != null) {
-                titleTextView.setTextColor(resources.getColor(R.color.colorPrimaryDark))
-                titleTextView.setOnClickListener({
-                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(info.link)))
-                })
+            titleTextView.apply {
+                // apply(): Example of a function literal with receiver
+                // Usage for initialization and configuration
+                text = info.title
+                textAlignment = View.TEXT_ALIGNMENT_CENTER
+                if (info.link != null) {
+                    titleTextView.setTextColor(resources.getColor(R.color.colorPrimaryDark))
+                    titleTextView.setOnClickListener({
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(info.link)))
+                    })
+                }
             }
+
         }
 
-        if (location != null) {
+        location?.let {
+            // let(): An extension function typically used for nullability handling
             locationTextView.text = getString(R.string.event_location_text, location.name, location.address,
                     location.zip, location.city)
             locationTextView.textAlignment = View.TEXT_ALIGNMENT_CENTER
@@ -50,12 +64,19 @@ class EventActivity : AppCompatActivity() {
             slot2TextView.text = getString(R.string.event_slot_text, slot2Topic.author, slot2Topic.title)
         }
 
-
-        if (BuildConfig.DEBUG) {
-            Log.d("DEBUG", "Debug mode active")
+        // Usage of a higher order function
+        // Execute the code in the lambda only when it's a debug build
+        onDebug {
             val debugVersionTextView = findViewById<TextView>(R.id.event_debug_version)
             debugVersionTextView.text = getString(R.string.event_debug_version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE)
             debugVersionTextView.visibility = View.VISIBLE
         }
+    }
+}
+
+fun onDebug(block: () -> Unit) {
+    if (BuildConfig.DEBUG) {
+        Log.d("DEBUG", "Debug mode active")
+        block()
     }
 }

@@ -25,4 +25,31 @@ object EventService {
 
 
     fun getFirstEvent(): Event = events.firstOrNull() ?: Event()
+
+    // Example usage of the Event DSL. For the implementation see EventDsl.kt
+    fun createDefaultEvent(): Event {
+        return event {
+            info {
+                organizer = "Kotlin Karlsruhe User Group"
+                title = "Another Kotlin Meetup"
+                date = "2018-02-22T20:00"
+            }
+
+            topics {
+                topic {
+                    author = "Jane Doe"
+                    title = "Kotlin"
+
+                }
+                topic {
+                    author = "John Doe"
+                    title = "More Kotlin"
+                }
+            }
+
+            location {
+                address = "Earth"
+            }
+        }
+    }
 }

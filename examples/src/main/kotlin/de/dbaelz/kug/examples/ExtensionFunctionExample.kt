@@ -1,6 +1,6 @@
 package de.dbaelz.kug.examples
 
-// Typical example of a helper method. Well known from Java.
+// Typical example of a helper method as top level function. As part of a helper class well known from Java.
 fun paddingStart(input: String, length: Int, paddingChar: Char = ' '): String {
     if (length < 0 || input.length <= length)
         return input
@@ -28,7 +28,7 @@ object StringHelper {
     }
 }
 
-// The idiomatic Kotlin way: Use a extension function.
+// The idiomatic Kotlin way: Use an extension function.
 // Such a function is provided by the Kotlin Standard Library. See Strings.kt#String.padStart()
 fun String.padStart(length: Int, paddingChar: Char = ' '): String {
     if (length < 0 || this.length <= length)
