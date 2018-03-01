@@ -1,6 +1,11 @@
-package de.dbaelz.kug.examples.scratch
+package de.dbaelz.kug.examples
+
+// Two examples for a Kotlin DSL
+// See the app module for more information
+
 
 // SimpleEventDsl.kt
+// This only works when the fields in the data classes are mutable
 /*
 fun event(block: Event.() -> Unit): Event {
     return Event().apply(block)
@@ -12,7 +17,8 @@ fun Event.info(block: Info.() -> Unit) {
 
 
 
-// EventDsl.kt
+// EventDslExamples.kt
+// A more complex and flexible version with builders
 /*
 
 import de.dbaelz.kug.kotlindemo.data.event.Event
@@ -120,6 +126,4 @@ event {
         address = "Earth"
     }
 }
-
-
  */
